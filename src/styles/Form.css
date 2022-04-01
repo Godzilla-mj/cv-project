@@ -1,0 +1,21 @@
+.title {
+    text-align: center;
+}
+
+.sub {
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.input {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+

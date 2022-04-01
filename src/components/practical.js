@@ -1,15 +1,20 @@
 import React, { useState } from 'react'
+import Preview from './preview'
 
 function Practical(props) {
 
     const [practicalInfo, setAllInfo] = useState({
+        practical: true, //preview use only
         companyName: '',
         city: '',
         state: '',
         position: '',
         startDate: '',
         endDate: '',
+        description: ''
     })
+
+    const [changeState, setChangeState] = useState(true)
 
     const handleChange = (e) => {
         setAllInfo ( prevValues => {
@@ -17,49 +22,101 @@ function Practical(props) {
         })
     }  
 
+    const onSubmitForm = (e) => {
+        e.preventDefault()
+        setChangeState(prevMode => !prevMode)
+    }
+
+    const { practical, companyName, city, state, position, startDate, endDate, description} = practicalInfo
+
+    if(!changeState) {
+        return (
+            <Preview
+                practical={practical}
+                companyName={companyName}
+                city={city}
+                state={state}
+                position={position}
+                startDate={startDate}
+                endDate={endDate}
+                description={description}
+                onEdit={onSubmitForm}
+                />
+        )
+    }
+
     return(
-        <form>
-            <input
-                name='companyName'
-                type='text'
-                placeholder='Company Name'
-                value={practicalInfo.companyName}
+        <form className='form practical'>
+            <label className='item'>
+                <input
+                    name='companyName'
+                    className='input'
+                    type='text'
+                    placeholder='Company Name'
+                    onChange={handleChange}
+                    value={practicalInfo.companyName}
                 />
-            <input
-                name='city'
-                type='text'
-                placeholder='City'
-                onChange={handleChange}
-                value={practicalInfo.city}
+                </label>
+            <label className='item'>
+                <input
+                    name='city'
+                    className='input'
+                    type='text'
+                    placeholder='City'
+                    onChange={handleChange}
+                    value={practicalInfo.city}
                 />
-            <input
-                name='state'
-                type='text'
-                placeholder='State'
-                onChange={handleChange}
-                value={practicalInfo.state}
+                </label>
+            <label className='item'>
+                <input
+                    name='state'
+                    className='input'
+                    type='text'
+                    placeholder='State'
+                    onChange={handleChange}
+                    value={practicalInfo.state}
                 />
-            <input
-                name='position'
-                type='text'
-                placeholder='Position'
-                onChange={handleChange}
-                value={practicalInfo.position}
+                </label>
+            <label className='item'>
+                <input
+                    name='position'
+                    className='input'
+                    type='text'
+                    placeholder='Position'
+                    onChange={handleChange}
+                    value={practicalInfo.position}
                 />
-            <input
-                name='startDate'
-                type='date'
-                placeholder=''
-                onChange={handleChange}
-                value={practicalInfo.startDate}
-                />
-            <input
-                name='endDate'
-                type='date'
-                placeholder=''
-                onChange={handleChange}
-                value={practicalInfo.endDate}
-                />
+                </label>
+            <label className='item'>
+                <input
+                    name='startDate'
+                    className='input'
+                    type='date'
+                    placeholder=''
+                    onChange={handleChange}
+                    value={practicalInfo.startDate}
+                    />
+                    </label>
+            <label className='item'>
+                <input
+                    name='endDate'
+                    className='input'
+                    type='date'
+                    placeholder=''
+                    onChange={handleChange}
+                    value={practicalInfo.endDate}
+                    />
+                    </label>
+            <label className='item'>
+                <textarea
+                    name='description'
+                    className='input'
+                    placeholder='Description'
+                    onChange={handleChange}
+                    value={practicalInfo.description}
+                    />
+                    </label>
+            <button type='submit' onClick={onSubmitForm}>Save</button>
         </form>
     )
 }
