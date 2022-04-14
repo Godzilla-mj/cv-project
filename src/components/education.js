@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Preview from './preview'
 
-function Education(props) {
+const Education = (props) => {
+    console.log(props)
 
     const [educationInfo, setAllInfo] = useState({
             education: true, //preview use only
@@ -15,7 +16,7 @@ function Education(props) {
     const [changeState, setChangeState] = useState(true)
 
     const handleChange = (e) => {
-        setAllInfo( prevValues => {
+        setAllInfo( (prevValues) => {
             return {...prevValues, [e.target.name]: e.target.value}
         })
     }

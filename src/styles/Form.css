@@ -9,7 +9,16 @@
 .form {
     display: flex;
     flex-wrap: wrap;
+    padding-right: 2rem;
+}
 
+.formList > span {
+    font-weight: 600;
+    padding-left: 1rem;
+}
+
+.item {
+    padding-right: 2rem;
 }
 
 .input {

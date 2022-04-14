@@ -48,6 +48,7 @@ function Practical(props) {
     return(
         <form className='form practical'>
             <label className='item'>
+                Company Name:
                 <input
                     name='companyName'
                     className='input'
@@ -58,6 +59,7 @@ function Practical(props) {
                 />
                 </label>
             <label className='item'>
+                City:
                 <input
                     name='city'
                     className='input'
@@ -68,6 +70,7 @@ function Practical(props) {
                 />
                 </label>
             <label className='item'>
+                State:
                 <input
                     name='state'
                     className='input'
@@ -78,6 +81,7 @@ function Practical(props) {
                 />
                 </label>
             <label className='item'>
+                Position:
                 <input
                     name='position'
                     className='input'
@@ -88,6 +92,7 @@ function Practical(props) {
                 />
                 </label>
             <label className='item'>
+                Start Date:
                 <input
                     name='startDate'
                     className='input'
@@ -98,6 +103,7 @@ function Practical(props) {
                     />
                     </label>
             <label className='item'>
+                End Date:
                 <input
                     name='endDate'
                     className='input'
@@ -108,6 +114,7 @@ function Practical(props) {
                     />
                     </label>
             <label className='item'>
+                Description
                 <textarea
                     name='description'
                     className='input'

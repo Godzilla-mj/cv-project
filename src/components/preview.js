@@ -3,7 +3,7 @@ function Preview(props) {
     if (props.personal) {
         return (
             <div className="form">  
-                <p>
+                <p className='formList'>
                     <span> First Name: </span>{props.firstName}
                     <span> Last Name: </span>{props.lastName}
                     <span> Email: </span>{props.email}
@@ -17,7 +17,7 @@ function Preview(props) {
     else if (props.education) {
         return (
             <div>
-                <p>
+                <p className='formList'>
                     <span> School Name: </span>{props.schoolName}
                     <span> Degree: </span> <span>{props.degree}'s Degree in {props.major} </span>
                     <span> Start Date: </span>{props.startDate}
@@ -32,7 +32,7 @@ function Preview(props) {
     else if (props.practical) {
         return (
             <div>
-                <p>
+                <p className='formList'>
                     <span> Company Name: </span> {props.companyName}
                     <span> City: </span>{props.city}
                     <span> State: </span>{props.state}
